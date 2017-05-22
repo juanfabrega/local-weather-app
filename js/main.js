@@ -151,16 +151,16 @@ function loadQuotes(weatherData) {
     else if (temp < 60) {
         quote = chilly;
     }
-    else if (temp >= 60 && temp <= 85) {
+    else if (temp >= 60 && temp <= 80 && weatherData.main.humidty < 70) {
         quote = nice;
     }
     else if (temp >= 100) {
         quote = oneHundredPlus;
     }
-    else if (temp > 85 && weatherData.main.humidity >= 70) {
+    else if (temp > 80 && weatherData.main.humidity >= 70) {
         quote = dank;
     }
-    else if (temp > 85) {
+    else if (temp > 80) {
         quote = hot;
     }
     else {
