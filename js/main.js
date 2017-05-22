@@ -179,8 +179,8 @@ function requestWeather() {
         const userLon = position.longitude;
 
         //craft dynamic weather API requests based on user location.
-        const requestWeather = 'http://api.openweathermap.org/data/2.5/weather?' + 'lat=' + userLat + '&' + 'lon=' + userLon +'&APPID=' + apiKey;
-        const requestForecast = 'http://api.openweathermap.org/data/2.5/forecast?' + 'lat=' + userLat + '&' + 'lon=' + userLon + '&APPID=' + apiKey;
+        const requestWeather = 'https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?' + 'lat=' + userLat + '&' + 'lon=' + userLon +'&APPID=' + apiKey;
+        const requestForecast = 'https://crossorigin.me/http://api.openweathermap.org/data/2.5/forecast?' + 'lat=' + userLat + '&' + 'lon=' + userLon + '&APPID=' + apiKey;
 
         //pulling current weather data and populating content in HTML document.
         $.getJSON(requestWeather, function(weatherData) {
