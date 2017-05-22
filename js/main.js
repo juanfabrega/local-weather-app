@@ -174,13 +174,13 @@ function loadQuotes(weatherData) {
 //function to get user position, make API call, and obtain current weather.
 function requestWeather() {
     //get user latitude and longitude via IP.
-    $.getJSON("https://freegeoip.net/json/", (function(position) {
+    $.getJSON("https://ipapi.co/json/", (function(position) {
         const userLat = position.latitude;
         const userLon = position.longitude;
 
         //craft dynamic weather API requests based on user location.
-        const requestWeather = 'https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?' + 'lat=' + userLat + '&' + 'lon=' + userLon +'&APPID=' + apiKey;
-        const requestForecast = 'https://crossorigin.me/http://api.openweathermap.org/data/2.5/forecast?' + 'lat=' + userLat + '&' + 'lon=' + userLon + '&APPID=' + apiKey;
+        const requestWeather = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?' + 'lat=' + userLat + '&' + 'lon=' + userLon +'&APPID=' + apiKey;
+        const requestForecast = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?' + 'lat=' + userLat + '&' + 'lon=' + userLon + '&APPID=' + apiKey;
 
         //pulling current weather data and populating content in HTML document.
         $.getJSON(requestWeather, function(weatherData) {
