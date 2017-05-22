@@ -1,0 +1,5 @@
+$ cat .gitattributes
+*/css/weather-icons-wind.css  linguist-vendored
+*/css/weather-icons-wind.min.css  linguist-vendored
+*/css/weather-icons.css  linguist-vendored=
+*/css/weather-icons.min.css  linguist-vendored
