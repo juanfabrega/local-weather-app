@@ -1,0 +1,133 @@
+body {
+    background: url(../assets/sunny-sky.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h3 {
+    line-height: 1.25em;
+    margin-top: -0.25em;
+
+}
+.location {
+    background: linear-gradient(180deg,rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+}
+
+.weather-content {
+
+}
+
+.sassy-text {
+
+}
+
+.current-temp {
+    font-size: 5em;
+    margin-top: -0.25em;
+}
+
+.onoffswitch {
+    position: relative; width: 74px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    height: 30px; padding: 0; line-height: 30px;
+    border: 2px solid #FFFFFF; border-radius: 30px;
+    background-color: #b5b5b5;
+    margin-bottom: 0;
+    transition: background-color 0.3s ease-in;
+}
+.onoffswitch-label:before {
+    content: "";
+    display: block; width: 30px; margin: 0px;
+    background: #009cff;
+    position: absolute; top: 0; bottom: 0;
+    right: 44px;
+    border: 2px solid #FFFFFF; border-radius: 30px;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: #FFFFFF;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    border-color: #FFFFFF;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    right: 0px;
+    height: inherit;
+}
+
+.wi {
+  font-size: 48px;
+}
+
+#current-icon {
+    font-size: 70px;
+}
+
+/* Utilities */
+.overlay {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.separator {
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.switch-text {
+    line-height: 1.5em;
+}
+
+.top10 {
+    margin-top: 20px;
+}
+
+.top20 {
+    margin-top: 20px;
+}
+
+.top25 {
+    margin-top: 25px;
+}
+
+.top30 {
+    margin-top: 30px;
+}
+
+.top40 {
+    margin-top: 40px;
+}
+
+.top50 {
+    margin-top: 50px;
+}
+
+/* Preloader */
+#preloader {
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color:#fff; /* change if the mask should have another color then white */
+	z-index:99; /* makes sure it stays on top */
+  color: #000;
+}
+
+#status {
+	width:200px;
+	height:200px;
+	position:absolute;
+	left:50%; /* centers the loading animation horizontally one the screen */
+	top:50%; /* centers the loading animation vertically one the screen */
+	background-image:url(../assets/images/status.gif); /* path to your loading animation */
+	background-repeat:no-repeat;
+	background-position:center;
+	margin:-100px 0 0 -100px; /* is width and height divided by two */
+}

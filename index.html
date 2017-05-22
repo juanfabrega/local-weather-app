@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://use.fontawesome.com/7af05dbe7d.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="css/weather-icons-wind.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
+<script type="text/javascript">
+    //<![CDATA[
+        $(window).on('load', function() { // makes sure the whole site is loaded
+            $('#status').fadeOut(); // will first fade out the loading animation
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+            $('body').delay(350).css({'overflow':'visible'});
+          })
+    //]]>
+</script>
+
+<body class="text-white">
+
+  <!--<div class="video-container">
+    <video autoplay loop>
+      <source src="assets/sunny-sky.mp4" type="video/mp4">
+    </video>
+  </div>-->
+    <div id="preloader">
+      <div id="status">Loading weather data...</div>
+      <p></p>
+    </div>
+    <div class="container-fluid">
+        <div class="row location pb-4">
+            <div class="col-md-12 mt-4 ml-4">
+                <h1 id="location-title"></h1>
+                <h5 class="text-left" id="location-dt"></h5>
+                <div class="row">
+                    <div class="col-md-12 mt-2">
+                        <h5 class="d-inline switch-text align-top">&degC&nbsp</h5>
+                        <div class="onoffswitch d-inline-block">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                            <label class="onoffswitch-label" for="myonoffswitch"></label>
+                        </div>
+                        <h5 class="d-inline switch-text align-top">&nbsp&degF</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <div class="row weather-content ml-2 mr-2">
+            <div class="col-md-6 col-lg-3 col-sm-6 center-block text-left mb-3 py-3 overlay">
+                <h3 class="sassy-text"></h3>
+            </div>
+          <div class="col-md-6 col-lg-3 col-sm-6 temperature center-block text-center py-3 mb-3 overlay">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="current-temp"></div>
+                      <div class="row">
+                          <div class="col-6">
+                              <div><i id="current-icon" class="wi" aria-hidden="true"></i></div>
+                          </div>
+                          <div class="col-6">
+                              <h5 class="text-left align-middle" id="weather-description"></h5>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-3 col-sm-6 forecast-icon center-block text-center py-3 mb-3 overlay">
+              <p class="text-left" id="hi"></p>
+              <p class="text-left" id="lo"></p>
+              <p class="text-left" id="sunrise"></p>
+              <p class="text-left" id="sunset"></p>
+          </div>
+          <div class="col-md-6 col-lg-3 col-sm-6 details center-block text-center py-3 mb-3 overlay">
+              <h3 class="text-center" id="humidity"></h3>
+          </div>
+      </div>
+      <div class="row pt-3 pb-3 ml-2 mr-2 overlay">
+          <div class="col-md-2">
+              <h4>5-Day Forecast</h4>
+          </div>
+          <div class="col-md-2 center-block text-center separator">
+              <p id="dayOne"></p>
+              <h3 id="dayOneTemp"></h3>
+              <p id="dayOneWeather"></p>
+              <div><i id="day-one-icon" class="wi" aria-hidden="true"></i></div>
+          </div>
+          <div class="col-md-2 center-block text-center separator">
+              <p id="dayTwo"></p>
+              <h3 id="dayTwoTemp"></h3>
+              <p id="dayTwoWeather"></p>
+              <div><i id="day-two-icon" class="wi" aria-hidden="true"></i></div>
+          </div>
+          <div class="col-md-2 center-block text-center separator">
+              <p id="dayThree"></p>
+              <h3 id="dayThreeTemp"></h3>
+              <p id="dayThreeWeather"></p>
+              <div><i id="day-three-icon" class="wi" aria-hidden="true"></i></div>
+          </div>
+          <div class="col-md-2 center-block text-center separator">
+              <p id="dayFour"></p>
+              <h3 id="dayFourTemp"></h3>
+              <p id="dayFourWeather"></p>
+              <div><i id="day-four-icon" class="wi" aria-hidden="true"></i></div>
+          </div>
+          <div class="col-md-2 center-block text-center separator">
+              <p id="dayFive"></p>
+              <h3 id="dayFiveTemp"></h3>
+              <p id="dayFiveWeather"></p>
+              <div><i id="day-five-icon" class="wi" aria-hidden="true"></i></div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
