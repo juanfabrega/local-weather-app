@@ -174,9 +174,9 @@ function loadQuotes(weatherData) {
 //function to get user position, make API call, and obtain current weather.
 function requestWeather() {
     //get user latitude and longitude via IP.
-    $.getJSON("http://ip-api.com/json", (function(position) {
-        const userLat = position.lat;
-        const userLon = position.lon;
+    $.getJSON("https://freegeoip.net/json/", (function(position) {
+        const userLat = position.latitude;
+        const userLon = position.longitude;
 
         //craft dynamic weather API requests based on user location.
         const requestWeather = 'http://api.openweathermap.org/data/2.5/weather?' + 'lat=' + userLat + '&' + 'lon=' + userLon +'&APPID=' + apiKey;
