@@ -174,7 +174,7 @@ function loadQuotes(weatherData) {
 //function to get user position, make API call, and obtain current weather.
 function requestWeather() {
     //get user latitude and longitude via IP.
-    $.getJSON("https://ip-api.com/json", (function(position) {
+    $.getJSON("http://ip-api.com/json", (function(position) {
         const userLat = position.lat;
         const userLon = position.lon;
 
