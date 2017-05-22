@@ -1,26 +1,29 @@
 body {
-    background: url(../assets/sunny-sky.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+
 }
 
 h3 {
     line-height: 1.25em;
     margin-top: -0.25em;
-
 }
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('../assets/sunny-sky.jpg') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+}
+
 .location {
     background: linear-gradient(180deg,rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
-}
-
-.weather-content {
-
-}
-
-.sassy-text {
-
 }
 
 .current-temp {
@@ -28,6 +31,7 @@ h3 {
     margin-top: -0.25em;
 }
 
+/* Celsius-Fahrenheit Switch */
 .onoffswitch {
     position: relative; width: 74px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
@@ -35,6 +39,7 @@ h3 {
 .onoffswitch-checkbox {
     display: none;
 }
+
 .onoffswitch-label {
     display: block; overflow: hidden; cursor: pointer;
     height: 30px; padding: 0; line-height: 30px;
@@ -43,6 +48,7 @@ h3 {
     margin-bottom: 0;
     transition: background-color 0.3s ease-in;
 }
+
 .onoffswitch-label:before {
     content: "";
     display: block; width: 30px; margin: 0px;
@@ -52,17 +58,21 @@ h3 {
     border: 2px solid #FFFFFF; border-radius: 30px;
     transition: all 0.3s ease-in 0s;
 }
+
 .onoffswitch-checkbox:checked + .onoffswitch-label {
     background-color: #FFFFFF;
 }
+
 .onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
     border-color: #FFFFFF;
 }
+
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
     right: 0px;
     height: inherit;
 }
 
+/* Weather icons */
 .wi {
   font-size: 48px;
 }
