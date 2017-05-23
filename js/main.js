@@ -171,6 +171,29 @@ function loadQuotes(weatherData) {
     $('.sassy-text').html(quote);
 }
 
+function loadVideo(weatherData) {
+    var dayNight = 'day';
+    var suffix = 'clear';
+    var code = weatherData.weather.id / 100;
+
+    if (weatherData.weather[0].icon.includes('n')) {
+        dayNight = 'night';
+    }
+
+    if (code == 2 || code == 3 || code == 5) {
+        suffix = 'rain';
+    }
+    else if (code == 6) {
+        suffix = 'snow';
+    }
+    else {
+        suffix = 'clear';
+    }
+
+    $('#bgvid').attr('src', 'assets/' + dayNight + '-' + suffix + '.mp4');
+
+}
+
 //function to get user position, make API call, and obtain current weather.
 function requestWeather() {
     //get user latitude and longitude via IP.
@@ -186,6 +209,7 @@ function requestWeather() {
         $.getJSON(requestWeather, function(weatherData) {
             loadWeatherData(weatherData);
             loadQuotes(weatherData);
+            loadVideo(weatherData);
             $('#myonoffswitch').click(function() {
                 loadWeatherData(weatherData);
             });
@@ -204,10 +228,16 @@ function requestWeather() {
 //call main function upon document load.
 $(document).ready(function() {
 
-  //quick status check.
-  console.log("Good to go!");
+    //quick status check.
+    console.log("Good to go!");
 
-  //main function that harnesses all others to load data into DOM.
-  requestWeather();
+    //main function that harnesses all others to load data into DOM.
+    requestWeather();
+
+    var src = "assets/day-snow.mp4";
+    $('#bgvid').attr('src', src);
+
+
+
 
 });
