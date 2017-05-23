@@ -117,7 +117,7 @@ function loadQuotes(weatherData) {
 
     //variables for weather conditions
     var temp = kelvintoFahrenheit(weatherData.main.temp);
-    var code = weatherData.weather.id / 100;
+    var code = Math.floor(weatherData.weather[0].id / 100);
 
     //variables for quotes
     const cold = 'Maybe just stay in bed, it\'s way too cold out there.';
@@ -174,8 +174,7 @@ function loadQuotes(weatherData) {
 function loadVideo(weatherData) {
     var dayNight = 'day';
     var suffix = 'clear';
-    var code = weatherData.weather.id / 100;
-
+    var code = Math.floor(weatherData.weather[0].id / 100);
     if (weatherData.weather[0].icon.includes('n')) {
         dayNight = 'night';
     }
