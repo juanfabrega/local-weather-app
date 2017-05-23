@@ -233,10 +233,4 @@ $(document).ready(function() {
     //main function that harnesses all others to load data into DOM.
     requestWeather();
 
-    var src = "assets/day-snow.mp4";
-    $('#bgvid').attr('src', src);
-
-
-
-
 });
